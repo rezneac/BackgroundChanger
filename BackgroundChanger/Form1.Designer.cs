@@ -58,8 +58,8 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
-    "s (*.*)|*.*";
+            this.openFileDialog1.Filter = "HEIC files (*.heic)|*.heic|JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP F" +
+    "iles (*.bmp)|*.bmp|All files (*.*)|*.*";
             // 
             // openFile
             // 

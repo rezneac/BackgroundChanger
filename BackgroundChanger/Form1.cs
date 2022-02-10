@@ -39,7 +39,7 @@ namespace BackgroundChanger
         {
             convertingImage();
 
-            changingWindowsBackground(@"C:\Users\rezne\Desktop\dynamic wallpapers\anime.heic", true);
+            changingWindowsBackground(pathToPhoto, true);
         }
 
         private void changingWindowsBackground(string path, bool update_registry)
@@ -76,13 +76,13 @@ namespace BackgroundChanger
             using (var images = new MagickImageCollection())
             {
 
-                images.Read(@"C:\Users\rezne\Desktop\dynamic wallpapers\anime.heic");
+                images.Read(pathToPhoto);
 
                 var page = 1;
                 foreach (var image in images)
                 {
                     // Write page to file that contains the page number
-                    image.Write(@"C:\Users\rezne\Desktop\dynamic wallpapers\Anime.Page" + page + ".jpg");
+                    image.Write(pathToPhoto + page + ".jpg");
                     page++;
                 }
 
@@ -102,7 +102,9 @@ namespace BackgroundChanger
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pathToPhoto.Load(openFileDialog1.FileName);
+                pathToPhoto = openFileDialog1.FileName;
+                
+                //pathToPhoto.Load(openFileDialog1.FileName);
             }
         }
     }
