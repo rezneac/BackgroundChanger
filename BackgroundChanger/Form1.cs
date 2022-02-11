@@ -1,18 +1,8 @@
-﻿using BackgroundChanger.Properties;
-using ImageMagick;
+﻿using ImageMagick;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace BackgroundChanger
 {
@@ -33,10 +23,12 @@ namespace BackgroundChanger
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void StartConverting_Click(object sender, EventArgs e)
         {
+
             convertingImage();
 
             changingWindowsBackground(pathToPhoto, true);
@@ -44,8 +36,6 @@ namespace BackgroundChanger
 
         private void changingWindowsBackground(string path, bool update_registry)
         {
-
-
             try
             {
 
@@ -92,10 +82,11 @@ namespace BackgroundChanger
         private void changingBackground_CheckedChanged(object sender, EventArgs e)
         {
             if (changingBackground.Checked)
-            {
+{
                 allowToChangePicture = true;
             }
 
+            
         }
 
         private void openFile_Click(object sender, EventArgs e)
@@ -103,8 +94,19 @@ namespace BackgroundChanger
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pathToPhoto = openFileDialog1.FileName;
-                
-                //pathToPhoto.Load(openFileDialog1.FileName);
+                pictureBox.Load(openFileDialog1.FileName);
+            }
+        }
+
+        private void stretchPicture_CheckedChanged(object sender, EventArgs e)
+        {
+            if (stretchPicture.Checked)
+            {
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                pictureBox.SizeMode = PictureBoxSizeMode.Normal;
             }
         }
     }
