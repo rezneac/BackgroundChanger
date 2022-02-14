@@ -28,7 +28,6 @@ namespace BackgroundChanger
 
         private void StartConverting_Click(object sender, EventArgs e)
         {
-
             convertingImage();
 
             changingWindowsBackground(pathToPhoto, true);
@@ -91,10 +90,11 @@ namespace BackgroundChanger
 
         private void openFile_Click(object sender, EventArgs e)
         {
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pathToPhoto = openFileDialog1.FileName;
-                pictureBox.Load(openFileDialog1.FileName);
+                //pictureBox.Load(openFileDialog1.FileName);
             }
         }
 
