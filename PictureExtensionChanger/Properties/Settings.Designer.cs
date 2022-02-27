@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BackgroundChanger.Properties
+namespace PictureExtensionChanger.Properties
 {
 
 
