@@ -1,4 +1,4 @@
-﻿namespace BackgroundChanger
+﻿namespace PictureExtensionChanger
 {
     partial class Form1
     {
@@ -34,6 +34,9 @@
             this.openFile = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.stretchPicture = new System.Windows.Forms.CheckBox();
+            this.imageExtension = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.convertToLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +53,11 @@
             // changingBackground
             // 
             this.changingBackground.AutoSize = true;
-            this.changingBackground.Location = new System.Drawing.Point(394, 421);
+            this.changingBackground.Location = new System.Drawing.Point(348, 421);
             this.changingBackground.Name = "changingBackground";
-            this.changingBackground.Size = new System.Drawing.Size(132, 17);
+            this.changingBackground.Size = new System.Drawing.Size(178, 17);
             this.changingBackground.TabIndex = 1;
-            this.changingBackground.Text = "Changing Background";
+            this.changingBackground.Text = "Changing Windows background";
             this.changingBackground.UseVisualStyleBackColor = true;
             this.changingBackground.CheckedChanged += new System.EventHandler(this.changingBackground_CheckedChanged);
             // 
@@ -86,7 +89,7 @@
             // stretchPicture
             // 
             this.stretchPicture.AutoSize = true;
-            this.stretchPicture.Location = new System.Drawing.Point(394, 395);
+            this.stretchPicture.Location = new System.Drawing.Point(348, 395);
             this.stretchPicture.Name = "stretchPicture";
             this.stretchPicture.Size = new System.Drawing.Size(60, 17);
             this.stretchPicture.TabIndex = 4;
@@ -94,11 +97,45 @@
             this.stretchPicture.UseVisualStyleBackColor = true;
             this.stretchPicture.CheckedChanged += new System.EventHandler(this.stretchPicture_CheckedChanged);
             // 
+            // imageExtension
+            // 
+            this.imageExtension.AutoSize = true;
+            this.imageExtension.Location = new System.Drawing.Point(45, 396);
+            this.imageExtension.Name = "imageExtension";
+            this.imageExtension.Size = new System.Drawing.Size(117, 13);
+            this.imageExtension.TabIndex = 5;
+            this.imageExtension.Text = "Image Extension: None";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "JPEG",
+            "PNG",
+            "heic"});
+            this.comboBox1.Location = new System.Drawing.Point(251, 393);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(87, 21);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // convertToLabel
+            // 
+            this.convertToLabel.AutoSize = true;
+            this.convertToLabel.Location = new System.Drawing.Point(190, 396);
+            this.convertToLabel.Name = "convertToLabel";
+            this.convertToLabel.Size = new System.Drawing.Size(59, 13);
+            this.convertToLabel.TabIndex = 7;
+            this.convertToLabel.Text = "Convert to:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.convertToLabel);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.imageExtension);
             this.Controls.Add(this.stretchPicture);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.openFile);
@@ -120,6 +157,9 @@
         private System.Windows.Forms.Button openFile;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.CheckBox stretchPicture;
+        private System.Windows.Forms.Label imageExtension;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label convertToLabel;
     }
 }
 
